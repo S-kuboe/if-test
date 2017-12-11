@@ -1,82 +1,8 @@
 {
   "name": "if-test",
   "scripts": {
-                "test": "phpunit",
+	  "test": "phpunit",
   },
-  "env": {
-    "AUTOBUS_URL": {
-      "required": true
-    },
-    "ENV_MODE_VARS": {
-      "required": true
-    },
-    "FIXIE_URL": {
-      "required": true
-    },
-    "JAWSDB_URL": {
-      "required": true
-    },
-    "LANG": {
-      "required": true
-    },
-    "LIBRATO_PASSWORD": {
-      "required": true
-    },
-    "LIBRATO_TOKEN": {
-      "required": true
-    },
-    "LIBRATO_USER": {
-      "required": true
-    },
-    "NEW_RELIC_LICENSE_KEY": {
-      "required": true
-    },
-    "NEW_RELIC_LOG": {
-      "required": true
-    },
-    "PAPERTRAIL_API_TOKEN": {
-      "required": true
-    },
-    "SENDGRID_PASSWORD": {
-      "required": true
-    },
-    "SENDGRID_USERNAME": {
-      "required": true
-    },
-    "TINFOILSECURITY_SCAN_SCHEDULE": {
-      "required": true
-    },
-    "TRANSLOADIT_AUTH_KEY": {
-      "required": true
-    },
-    "TRANSLOADIT_SECRET_KEY": {
-      "required": true
-    },
-    "TRANSLOADIT_URL": {
-      "required": true
-    },
-    "TZ": {
-      "required": true
-    },
-    "ZIGGEO_URL": {
-      "required": true
-    }
-  },
-  "formation": {
-  },
-  "addons": [
-    "autobus",
-    "fixie",
-    "jawsdb",
-    "librato",
-    "newrelic",
-    "papertrail",
-    "scheduler",
-    "sendgrid",
-    "tinfoilsecurity",
-    "transloadit",
-    "ziggeo"
-  ],
   "buildpacks": [
     {
       "url": "heroku/php"
