@@ -1,11 +1,14 @@
 {
-  "name": "if-test",
-  "scripts": {
-	  "test": "phpunit",
-  },
-  "buildpacks": [
-    {
-      "url": "heroku/php"
-    }
-  ]
+	"environments": {
+		"test": {
+			"scripts": {
+				"test": "phpunit",
+				"quantity": 1,
+				"size": "performance-s"
+			},
+			"addons": [
+				"sendgrid"
+			]
+		}
+	}
 }
