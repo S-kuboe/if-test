@@ -1,6 +1,7 @@
 {
   "name": "if-test",
   "scripts": {
+                "test": "phpunit",
   },
   "env": {
     "AUTOBUS_URL": {
