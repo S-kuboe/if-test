@@ -1,6 +1,6 @@
 {
 	"environments": {
-		"app_test": {
+		"test": {
 			"scripts": {
 				"test": "phpunit",
 				"quantity": 1,
