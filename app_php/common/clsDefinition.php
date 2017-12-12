@@ -64,27 +64,6 @@ class clsDefinition {
 		2 => "不明"
 	);		
 	
-	//■SendGrid
-	//ローカル用
-	const LOCAL_CONTACT_SEND_GRID_API_KEY = "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";
-	
-	//メール送信先
-	//開発環境
-	public static $DEV_CONTACT_TO_MAIL	 = array(
-		'nambe@inform.co.jp',
-		'ryamamoto@inform.co.jp',
-		'kuboe@inform-us.com',
-		'takada@inform.co.jp'
-	);
-	//ステージング
-	public static $STG_CONTACT_TO_MAIL	 = array(
-		'support@inform.co.jp'
-	);
-	//本番
-	public static $PRD_CONTACT_TO_MAIL	 = array(
-		'support@inform.co.jp'
-	);
-	
 	//■セッション名
 	const SESSION_ERROR_JSON					 = "s-error-json";
 	const SESSION_TOKEN							 = "s-token";
