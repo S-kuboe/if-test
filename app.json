@@ -4,8 +4,7 @@
 			"scripts": {
 				"test": "phpunit",
 				"quantity": 1,
-				"size": "performance-s",
-				"start": "php_unit app_test/ clsContactTest::testNotEmpty"
+				"size": "free"
 			},
 			"addons": [
 				"sendgrid"
