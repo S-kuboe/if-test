@@ -30,7 +30,6 @@ class ctlDBConnectTest {
 
 		$objClsDBConnectTest	 = new clsDBConnectTest();
 		$aryPostData		 = $objClsDBConnectTest->pullConvertData();
-		$objChecker			 = new clsDBConnectTestChecker( $aryPostData );
 
 		try {
 			$conn = new PDO( "mysql:host=$this->_strHostName;dbname=$this->_strDatabase", $this->_strUserName, $this->_strPassword );

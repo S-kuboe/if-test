@@ -12,11 +12,17 @@ class ctlTransloadit {
 	private $_strUserName;
 	private $_strPassword;
 	private $_strDatabase;
+	
+	private $_strS3Key;
+	private $_strS3Secret;
 
 	/**
 	 * コンストラクタ
 	 */
 	function __construct() {
+		$this->_strS3Key	 = getenv( 'ENV_S3_KEY' );
+		$this->_strS3Secret = getenv( 'WNV_S3_SECRET' );
+
 		$this->_strKey	 = getenv( 'TRANSLOADIT_AUTH_KEY' );
 		$this->_strSecret = getenv( 'TRANSLOADIT_SECRET_KEY' );
 
@@ -34,11 +40,8 @@ class ctlTransloadit {
 
 		$objClsTransloadit	 = new clsTransloadit();
 		$aryPostData		 = $objClsTransloadit->pullConvertData();
-		$objChecker			 = new clsTransloaditChecker( $aryPostData );
 
 		$transloadit = new Transloadit( array(
-//	'key'	 => getenv( 'TRANSLOADIT_AUTH_KEY' ),
-//	'secret' => getenv( 'TRANSLOADIT_SECRET_KEY' )
 			'key'	 => $this->_strKey,
 			'secret' => $this->_strSecret
 				) );
@@ -88,11 +91,8 @@ class ctlTransloadit {
 
 		$objClsTransloadit	 = new clsTransloadit();
 		$aryPostData		 = $objClsTransloadit->pullConvertData();
-		$objChecker			 = new clsTransloaditChecker( $aryPostData );
 
 		$transloadit = new Transloadit( array(
-//	'key'	 => getenv( 'TRANSLOADIT_AUTH_KEY' ),
-//	'secret' => getenv( 'TRANSLOADIT_SECRET_KEY' )
 			'key'	 => $this->_strKey,
 			'secret' => $this->_strSecret
 				) );
@@ -129,8 +129,8 @@ class ctlTransloadit {
 							'use'	 => ['encode_video', 'thumb'],
 							'robot'	 => '/s3/store',
 							'bucket' => 'kuboe',
-							'key'	 => 'AKIAJ66PLU22ANUDAJHA',
-							'secret' => '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',
+							'key'	 => $this->_strS3Key,
+							'secret' => $this->_strS3Secret,
 							'path'	 => 'heroku/${previous_step.name}/${file.id}.${file.ext}'
 						],
 					],

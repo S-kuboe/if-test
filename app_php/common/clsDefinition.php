@@ -18,7 +18,6 @@ define( 'DIR_DMT', filter_input(INPUT_SERVER, "DOCUMENT_ROOT") );
 define( 'DIR_CMN', DIR_APP . "app_php/common" );
 define( 'DIR_MDL', DIR_APP . "app_php/model" );
 define( 'DIR_CTR', DIR_APP . "app_php/controller");
-define( 'DIR_VAL', DIR_APP . "app_php/validate");
 
 class clsDefinition {
 

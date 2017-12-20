@@ -25,7 +25,6 @@ class ctlZiggeo {
 
 		$objClsZiggeo	 = new clsZiggeo();
 		$aryPostData	 = $objClsZiggeo->pullConvertData();
-		$objChecker		 = new clsZiggeoChecker( $aryPostData );
 
 		$count = 0;
 
@@ -73,17 +72,15 @@ class ctlZiggeo {
 
 		$objClsZiggeo	 = new clsZiggeo();
 		$aryPostData	 = $objClsZiggeo->pullConvertData();
-		$objChecker		 = new clsZiggeoChecker( $aryPostData );
 
 		$settings = array(
 			"title"			 => "Title of your Wall",
 			"heading"		 => "Title Heading",
 			"subtitle"		 => "Subtitle of your wall.",
 			"css"			 => array("styles.css"),
-			"token"			 => "12daf14e307244590dcac02d26804ed7", // Ziggeo Application Token
-			"private_key"	 => "d0e3691dbf3de6c3c109cd79429c3301", // Ziggeo Application Private Key
+			"token"			 => $this->_strAppToken, // Ziggeo Application Token
+			"private_key"	 => $this->_strPrivateKey, // Ziggeo Application Private Key
 			"sdkpath"		 => DIR_APP . 'vendor/ziggeo/ziggeophpsdk/Ziggeo.php', // path to Ziggeo php sdk
-			//	"sdkpath"		 => '../vendor/ziggeo/ziggeophpsdk/Ziggeo.php', // path to Ziggeo php sdk
 			"name_google"	 => FALSE,
 			"open"			 => TRUE // People can record themselves
 		);

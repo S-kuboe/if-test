@@ -9,7 +9,6 @@
 require_once("../../../include.php");
 require_once(DIR_MDL . "/clsDBConnectTest.php");
 require_once(DIR_CTR . "/ctlDBConnectTest.php");
-require_once(DIR_VAL . "/clsDBConnectTestChecker.php");
 
 //お問い合わせコントローラ呼出し
 $objCtlDBConnectTest = new ctlDBConnectTest();
