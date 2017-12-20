@@ -1,12 +1,5 @@
 <?php
 
-/**
- * 	共通関数クラス
- * 	共通関数の定義をおこなうクラス
- *
- * 	@author		kuboe 2017/12/06
- * 	@version		1.0
- */
 class clsCommonFunction {
 
 	/**

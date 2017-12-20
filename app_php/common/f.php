@@ -1,11 +1,5 @@
 <?php
 
-/**
- * 	表示フォーマット用の関数群を保有する特殊クラス
- *
- * 	@author		kuboe 2017/12/06
- * 	@version		1.0
- */
 class f {
 
 	private static $_arySearchData;
