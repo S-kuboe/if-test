@@ -21,7 +21,7 @@ class ctlTransloadit {
 	 */
 	function __construct() {
 		$this->_strS3Key	 = getenv( 'ENV_S3_KEY' );
-		$this->_strS3Secret = getenv( 'WNV_S3_SECRET' );
+		$this->_strS3Secret = getenv( 'ENV_S3_SECRET' );
 
 		$this->_strKey	 = getenv( 'TRANSLOADIT_AUTH_KEY' );
 		$this->_strSecret = getenv( 'TRANSLOADIT_SECRET_KEY' );
