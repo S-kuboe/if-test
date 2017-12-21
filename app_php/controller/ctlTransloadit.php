@@ -12,21 +12,24 @@ class ctlTransloadit {
 	private $_strUserName;
 	private $_strPassword;
 	private $_strDatabase;
-	
+	private $_strS3Bucket;
 	private $_strS3Key;
 	private $_strS3Secret;
+	private $_strS3Region;
 
 	/**
 	 * コンストラクタ
 	 */
 	function __construct() {
-		$this->_strS3Key	 = getenv( 'ENV_S3_KEY' );
-		$this->_strS3Secret = getenv( 'ENV_S3_SECRET' );
+		$this->_strS3Bucket	 = getenv( 'S3_BUCKET' );
+		$this->_strS3Key	 = getenv( 'S3_ACCESS_KEY' );
+		$this->_strS3Secret	 = getenv( 'S3_SECRET_KEY' );
+		$this->_strS3Region	 = getenv( 'S3_REGION' );
 
-		$this->_strKey	 = getenv( 'TRANSLOADIT_AUTH_KEY' );
-		$this->_strSecret = getenv( 'TRANSLOADIT_SECRET_KEY' );
+		$this->_strKey		 = getenv( 'TRANSLOADIT_AUTH_KEY' );
+		$this->_strSecret	 = getenv( 'TRANSLOADIT_SECRET_KEY' );
 
-		$url = parse_url( getenv( "JAWSDB_URL" ) );
+		$url				 = parse_url( getenv( "JAWSDB_URL" ) );
 		$this->_strHostName	 = $url["host"];
 		$this->_strUserName	 = $url["user"];
 		$this->_strPassword	 = $url["pass"];
@@ -128,7 +131,7 @@ class ctlTransloadit {
 						'export'		 => [
 							'use'	 => ['encode_video', 'thumb'],
 							'robot'	 => '/s3/store',
-							'bucket' => 'kuboe',
+							'bucket' => $this->_strS3Bucket,
 							'key'	 => $this->_strS3Key,
 							'secret' => $this->_strS3Secret,
 							'path'	 => 'heroku/${previous_step.name}/${file.id}.${file.ext}'
@@ -209,7 +212,7 @@ SQL;
 HTML;
 
 		foreach ( $result AS $key => $val ) {
-			if ( @file_get_contents( $val["upd_url"]) !== false ) {
+			if ( @file_get_contents( $val["upd_url"] ) !== false ) {
 				$res = json_decode( file_get_contents( $val["upd_url"] ) );
 
 				if ( $res->ok === 'ASSEMBLY_COMPLETED' ) {
