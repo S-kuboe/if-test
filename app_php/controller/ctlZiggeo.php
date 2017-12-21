@@ -14,8 +14,8 @@ class ctlZiggeo {
 	 */
 	function __construct() {
 		$url					 = parse_url( getenv( "ZIGGEO_URL" ) );
-		$this->_strAppToken		 = $url["host"];
-		$this->_strPrivateKey	 = $url["user"];
+		$this->_strAppToken		 = $url["user"];
+		$this->_strPrivateKey	 = $url["pass"];
 	}
 
 	/**
