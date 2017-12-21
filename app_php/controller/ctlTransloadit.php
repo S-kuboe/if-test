@@ -182,7 +182,6 @@ SQL;
 
 		$objClsTransloadit	 = new clsTransloadit();
 		$aryPostData		 = $objClsTransloadit->pullConvertData();
-		$objChecker			 = new clsTransloaditChecker( $aryPostData );
 
 		try {
 			$conn = new PDO( "mysql:host=$this->_strHostName;dbname=$this->_strDatabase", $this->_strUserName, $this->_strPassword );
@@ -226,6 +225,7 @@ HTML;
 		<video controls="" autoplay="" name="media">
 			<source src="{$urlMovie}" type="video/mp4">
 		</video>
+		<br />
 HTML;
 				}
 			}
