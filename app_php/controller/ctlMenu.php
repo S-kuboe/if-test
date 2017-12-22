@@ -18,7 +18,7 @@ class ctlMenu {
 	 * 　動画アップロード
 	 */
 	function process() {	
-		require_once( './dspmenu.php' );
+		require_once( './dspMenu.php' );
 	}
 
 }
