@@ -1,11 +1,17 @@
 <?php
 
+/**
+ * 	【コントローラ】Jaswdbアドオンを使用したサンプル
+ *
+ * 	@version	1.0
+ */
 require(DIR_APP . '/vendor/autoload.php');
 
 use transloadit\Transloadit;
 
 class ctlDBConnectTest {
 
+	//クラス変数
 	private $_strHostName;
 	private $_strUserName;
 	private $_strPassword;
@@ -25,6 +31,7 @@ class ctlDBConnectTest {
 
 	/**
 	 * 画面処理分岐
+	 * 　データベース処理
 	 */
 	function processDBConnectTest() {
 

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * 表示フォーマット用の関数群を保有する特殊クラス
+ *
+ * @version	1.0
+ */
 class f {
 
 	private static $_arySearchData;
@@ -289,7 +294,7 @@ class f {
 
 		$recursive_func = function ($search_element, $aryData, $intRetFlg, $strRetVal) use (&$recursive_func) {
 
-			
+
 			if ( is_array( $aryData ) ) {
 				if ( array_key_exists( $search_element, $aryData ) ) {
 					self::$_arySearchData = $aryData[$search_element];

@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 	【モデル】Transloaditアドオンを使用したサンプル
+ * 	【モデル】メニュー画面処理
  *
  * 	@version	1.0
  */
-class clsTransloadit {
+class clsmenu {
 
 	private $_aryPostData;
 

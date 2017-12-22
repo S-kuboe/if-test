@@ -1,11 +1,17 @@
 <?php
 
+/**
+ * 	【コントローラ】Ziggeoアドオンを使用したサンプル
+ *
+ * 	@version	1.0
+ */
 require(DIR_APP . '/vendor/autoload.php');
 
 use ziggeo\ziggeophpsdk;
 
 class ctlZiggeo {
 
+	//クラス変数
 	private $_strAppToken;
 	private $_strPrivateKey;
 
@@ -20,6 +26,7 @@ class ctlZiggeo {
 
 	/**
 	 * 画面処理分岐
+	 * 　動画アップロード
 	 */
 	function processForm() {
 
@@ -67,6 +74,7 @@ class ctlZiggeo {
 
 	/**
 	 * 画面処理分岐
+	 * 　動画取得
 	 */
 	function processList() {
 

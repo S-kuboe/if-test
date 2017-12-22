@@ -1,14 +1,19 @@
 <?php
 
+/**
+ * 	【モデル】Ziggeoアドオンを使用したサンプル
+ *
+ * 	@version	1.0
+ */
 class clsZiggeo {
 
-	private $_aryDisp;
+	private $_aryPostData;
 
 	/**
 	 * コンストラクタ
 	 */
 	public function __construct() {
-		$this->_aryDisp = [];
+		$this->_aryPostData = [];
 	}
 
 	/**
@@ -16,7 +21,7 @@ class clsZiggeo {
 	 */
 	public function pullConvertData() {
 
-		return $this->_aryDisp;
+		return $this->_aryPostData;
 	}
 	
 }

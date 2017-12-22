@@ -1609,12 +1609,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/transloadit/php-sdk.git",
-                "reference": "5956a1c2911c3116ce153d3ddad076f007138a44"
+                "reference": "f8363ea0443dbf5f4719651c7b336b22bb1827f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/transloadit/php-sdk/zipball/5956a1c2911c3116ce153d3ddad076f007138a44",
-                "reference": "5956a1c2911c3116ce153d3ddad076f007138a44",
+                "url": "https://api.github.com/repos/transloadit/php-sdk/zipball/f8363ea0443dbf5f4719651c7b336b22bb1827f9",
+                "reference": "f8363ea0443dbf5f4719651c7b336b22bb1827f9",
                 "shasum": ""
             },
             "require": {
@@ -1650,7 +1650,7 @@
                 "video",
                 "waveform"
             ],
-            "time": "2017-07-05T08:36:47+00:00"
+            "time": "2017-12-21T09:48:35+00:00"
         },
         {
             "name": "webmozart/assert",

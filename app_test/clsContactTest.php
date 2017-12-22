@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * 	【PHPUnit】お問い合わせテスト
+ *
+ * 	@version	1.0
+ */
 require_once("./include.php");
 
 require('./vendor/autoload.php');

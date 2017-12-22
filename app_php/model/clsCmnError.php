@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 	【モデル】Transloaditアドオンを使用したサンプル
+ * 	【モデル】共通エラー画面処理
  *
  * 	@version	1.0
  */
-class clsTransloadit {
+class clsCmnError {
 
 	private $_aryPostData;
 

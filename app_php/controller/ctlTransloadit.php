@@ -1,11 +1,17 @@
 <?php
 
+/**
+ * 	【コントローラ】Transloaditアドオンを使用したサンプル
+ *
+ * 	@version	1.0
+ */
 require(DIR_APP . '/vendor/autoload.php');
 
 use transloadit\Transloadit;
 
 class ctlTransloadit {
 
+	//クラス変数
 	private $_strKey;
 	private $_strSecret;
 	private $_strHostName;
@@ -38,6 +44,7 @@ class ctlTransloadit {
 
 	/**
 	 * 画面処理分岐
+	 * 　動画アップロード
 	 */
 	function processTransloadit() {
 
@@ -89,6 +96,7 @@ class ctlTransloadit {
 
 	/**
 	 * 画面処理分岐
+	 * 　動画アップロードを行いS3に転送
 	 */
 	function processTransloaditS3() {
 
@@ -177,6 +185,7 @@ SQL;
 
 	/**
 	 * 画面処理分岐
+	 * 　S3に転送した動画を取得して表示
 	 */
 	function processTransloaditS3List() {
 

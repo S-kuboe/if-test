@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * 共通関数クラス
+ * 　共通関数の定義をおこなうクラス
+ *
+ * @version 1.0
+ */
 class clsCommonFunction {
 
 	/**
@@ -157,6 +163,33 @@ class clsCommonFunction {
 	 */
 	public static function getToken() {
 		return md5( uniqid( rand(), true ) );
+	}
+
+	/**
+	 * IPチェック
+	 */
+	public static function blnWhiteList() {
+		$strUserIP = self::getUserIP();
+
+		//環境変数が登録されていなければTRUE
+		if ( getenv( 'ENV_WHITE_IP' ) === false ) {
+			return true;
+		}
+
+		//中身が空であればTRUE
+		if ( getenv( 'ENV_WHITE_IP' ) === "" ) {
+			return true;
+		}
+
+		//配列に分解
+		$aryWhiteIP = wxplode( ",", getenv( 'ENV_WHITE_IP' ) );
+
+		//許可IPであればTRUE
+		if ( in_array( $strUserIP, $aryWhiteIP ) ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**

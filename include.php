@@ -15,3 +15,7 @@ require_once DIR_CMN . "/f.php";
 
 //共通メソッド
 require_once DIR_CMN . "/clsCommonFunction.php";
+
+//共通処理
+require_once DIR_CMN . "/preFunction.php";
+
