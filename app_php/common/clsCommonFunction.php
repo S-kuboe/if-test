@@ -182,7 +182,7 @@ class clsCommonFunction {
 		}
 
 		//配列に分解
-		$aryWhiteIP = wxplode( ",", getenv( 'ENV_WHITE_IP' ) );
+		$aryWhiteIP = explode( ",", getenv( 'ENV_WHITE_IP' ) );
 
 		//許可IPであればTRUE
 		if ( in_array( $strUserIP, $aryWhiteIP ) ) {
