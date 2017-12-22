@@ -35,7 +35,8 @@ class ctlDBConnectTest {
 	 */
 	function processDBConnectTest() {
 
-		$objClsDBConnectTest	 = new clsDBConnectTest();
+		//オブジェクト作成
+		$objClsDBConnectTest = new clsDBConnectTest();
 		$aryPostData		 = $objClsDBConnectTest->pullConvertData();
 
 		try {
@@ -101,6 +102,10 @@ SQL;
 		$prepare->execute();
 		$result		 = $prepare->fetchAll( PDO::FETCH_ASSOC );
 		var_dump( $result );
+		
+		//オブジェクト解放
+		unset($objClsDBConnectTest);
+		
 	}
 
 }

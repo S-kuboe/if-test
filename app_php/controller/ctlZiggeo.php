@@ -70,6 +70,10 @@ class ctlZiggeo {
 		}
 
 		require_once( './dspZiggeoForm.php' );
+
+		//オブジェクト解放
+		unset( $objClsZiggeo );
+		
 	}
 
 	/**
@@ -94,6 +98,10 @@ class ctlZiggeo {
 		);
 
 		require_once( './dspZiggeoList.php' );
+		
+		//オブジェクト解放
+		unset( $objClsZiggeo );
+		
 	}
 
 }

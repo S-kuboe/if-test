@@ -13,8 +13,9 @@
 		　<a href="../Transloadit/TransloaditS3List/">Transloadit動画閲覧(S3)</a><br />
 		■データベース<br />
 		　<a href="../DBConnectTest/DBConnectTest/">JAWSDB接続サンプル</a><br />
-		<?php
-			//error_log( "Inform error:  テスト" );
-		?>
+		■その他<br />
+		　<a href="../Other/HerokuIP/">HerokuIP取得</a><br />
+		　<a href="../Other/PhpInfo/">PHP Info</a><br />
+		　<a href="../Other/EnvServer/">環境変数またサーバー情報</a><br />
     </body>
 </html>

@@ -86,12 +86,20 @@ class ctlTransloadit {
 				echo '<pre>';
 				print_r( $response );
 				echo '</pre>';
-				exit;
+
+				//オブジェクト解放
+				unset( $objClsTransloadit );
+
+				exit();
 			}
 
 			$blnDsp = true;
 		}
+
 		require_once( './dspTransloadit.php' );
+
+		//オブジェクト解放
+		unset( $objClsTransloadit );
 	}
 
 	/**
@@ -175,12 +183,20 @@ SQL;
 				echo '<pre>';
 				var_dump( $aryData );
 				echo '</pre>';
-				exit;
+
+				//オブジェクト解放
+				unset( $objClsTransloadit );
+
+				exit();
 			}
 
 			$blnDsp = true;
 		}
+
 		require_once( './dspTransloaditS3.php' );
+
+		//オブジェクト解放
+		unset( $objClsTransloadit );
 	}
 
 	/**
@@ -244,6 +260,9 @@ HTML;
 </body>
 </html>
 HTML;
+
+		//オブジェクト解放
+		unset( $objClsTransloadit );
 	}
 
 }

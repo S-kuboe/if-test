@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 	【コントローラ】メニュー画面処理
+ * 	【コントローラ】Herokuで現在使われているIP取得画面処理
  *
  * 	@version	1.0
  */
-class ctlMenu {
+class ctlHerokuIP {
 
 	/**
 	 * コンストラクタ
@@ -20,13 +20,13 @@ class ctlMenu {
 	 */
 	function process() {
 		//オブジェト作成
-		$objClsMenu	 = new clsMenu();
-		$aryPostData = $objClsMenu->pullConvertData();
+		$objClsHerokuIP	 = new clsHerokuIP();
+		$aryPostData	 = $objClsHerokuIP->pullConvertData();
 
-		require_once( './dspMenu.php' );
+		require_once( './dspHerokuIP.php' );
 		
 		//オブジェクト解放
-		unset($objClsMenu);
+		unset($objClsHerokuIP);
 		
 	}
 

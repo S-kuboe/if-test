@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 	【モデル】メニュー処理
+ * 	【モデル】Herokuで現在使われているIP取得処理
  *
  * 	@version	1.0
  */
-class clsMenu {
+class clsHerokuIP {
 
 	private $_aryPostData;
 

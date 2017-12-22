@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 	【モデル】メニュー処理
+ * 	【モデル】PHP INFO処理
  *
  * 	@version	1.0
  */
-class clsMenu {
+class clsmenu {
 
 	private $_aryPostData;
 

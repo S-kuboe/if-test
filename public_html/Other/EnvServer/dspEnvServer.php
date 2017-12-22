@@ -1,0 +1,34 @@
+<?php
+
+echo "getenv<br />";
+echo "REMOTE_ADDR:" . getenv( "REMOTE_ADDR" ) . "<br />";
+echo "HTTP_X_FORWARDED_FOR:" . getenv( "HTTP_X_FORWARDED_FOR" ) . "<br />";
+echo "HTTP_USER_AGENT:" . getenv( "HTTP_USER_AGENT" ) . "<br />";
+echo "HTTP_HOST:" . gethostbyaddr( getenv( "REMOTE_ADDR" ) ) . "<br />";
+echo "SERVER_NAME:" . getenv( "SERVER_NAME" ) . "<br />";
+echo "SERVER_PROTOCOL:" . getenv( "SERVER_PROTOCOL" ) . "<br />";
+echo "SERVER_PORT:" . getenv( "SERVER_PORT" ) . "<br />";
+echo "GATEWAY_INTERFACE:" . getenv( "GATEWAY_INTERFACE" ) . "<br />";
+echo "HTTP_REFERER:" . getenv( "HTTP_REFERER" ) . "<br />";
+echo "REMOTE_HOST:" . getenv( "REMOTE_HOST" ) . "<br />";
+echo "HTTP_X_REAL_IP:" . getenv( "HTTP_X_REAL_IP" ) . "<br />";
+echo "<br />";
+echo "server<br />";
+echo "REMOTE_ADDR:" . $_SERVER["REMOTE_ADDR"] . "<br />";
+echo "HTTP_X_FORWARDED_FOR:" . $_SERVER["HTTP_X_FORWARDED_FOR"] . "<br />";
+echo "HTTP_USER_AGENT:" . $_SERVER["HTTP_USER_AGENT"] . "<br />";
+echo "HTTP_HOST:" . $_SERVER["HTTP_HOST"] . "<br />";
+echo "SERVER_NAME:" . $_SERVER["SERVER_NAME"] . "<br />";
+echo "SERVER_PROTOCOL:" . $_SERVER["SERVER_PROTOCOL"] . "<br />";
+echo "SERVER_PORT:" . $_SERVER["SERVER_PORT"] . "<br />";
+echo "GATEWAY_INTERFACE:" . $_SERVER["GATEWAY_INTERFACE"] . "<br />";
+echo "HTTP_REFERER:" . $_SERVER["HTTP_REFERER"] . "<br />";
+echo "REMOTE_HOST:" . $_SERVER["REMOTE_HOST"] . "<br />";
+echo "他<br />";
+echo "gethostbyname(REMOTE_ADDR):" . gethostbyname( gethostbyaddr( getenv( "REMOTE_ADDR" ) ) ) . "<br />";
+echo "gethostbyname(HTTP_X_FORWARDED_FOR):" . gethostbyname( gethostbyaddr( getenv( "HTTP_X_FORWARDED_FOR" ) ) ) . "<br />";
+echo "gethostbyname(HTTP_HOST):" . gethostbyname( $_SERVER["HTTP_HOST"] ) . "<br />";
+echo "gethostbyname(HTTP_HOST):" . gethostbyname( getenv( "SERVER_NAME" ) ) . "<br />";
+echo "gethostbyname(HTTP_HOST):" . gethostbyname( getenv( "SERVER_NAME" ) ) . "<br />";
+echo "gethostbyaddr(HTTP_X_FORWARDED_FOR):" . gethostbyaddr( getenv( "HTTP_X_FORWARDED_FOR" ) ) . "<br />";
+echo "date：" . date( "Y-m-d H:i:s" ) . "<br />";

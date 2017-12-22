@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 	【モデル】Transloaditアドオンを使用したサンプル
+ * 	【モデル】Transloaditアドオンを使用したサンプル処理
  *
  * 	@version	1.0
  */

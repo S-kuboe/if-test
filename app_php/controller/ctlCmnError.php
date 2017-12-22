@@ -11,22 +11,32 @@ class ctlCmnError {
 	 * コンストラクタ
 	 */
 	function __construct() {
+		
 	}
 
 	/**
 	 * 画面処理分岐
-	 * 　動画アップロード
+	 * 　共通エラー
 	 */
 	function process() {
-		
-		$strErrorMsg = "アクセスしていただいたページは存在しません。" . PHP_EOL ."お手数ですが、アクセスされたURLを今一度ご確認お願いします。。";
-		
-		if(f::filterArray( clsDefinition::SESSION_ERROR_MSG, $_SESSION ) !== ""){
+
+		//オブジェト作成
+		$objClsCmnError	 = new clsCmnError();
+		$aryPostData	 = $objClsCmnError->pullConvertData();
+
+		if ( f::filterArray( clsDefinition::SESSION_ERROR_MSG, $_SESSION ) !== "" ) {
 			$strErrorMsg = f::filterArray( clsDefinition::SESSION_ERROR_MSG, $_SESSION );
-			unset($_SESSION[clsDefinition::SESSION_ERROR_MSG]);
+			unset( $_SESSION[clsDefinition::SESSION_ERROR_MSG] );
+		} else {
+			//アクセス時
+			clsCommonFunction::putErrorLog( "Inform PHP msg:　【アクセス】許可しないIPアドレスでのアクセスがありました。" );
 		}
-		
+
 		require_once( './dspErrorPage.php' );
+		
+		//オブジェクト解放
+		unset($objClsCmnError);
+		
 	}
 
 }

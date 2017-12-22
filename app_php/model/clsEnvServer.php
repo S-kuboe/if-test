@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 	【モデル】メニュー処理
+ * 	【モデル】環境変数またサーバー情報処理
  *
  * 	@version	1.0
  */
-class clsMenu {
+class clsEnvServer {
 
 	private $_aryPostData;
 

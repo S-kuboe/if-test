@@ -1,11 +1,11 @@
 <?php
 
 /**
- * 	【コントローラ】メニュー画面処理
+ * 	【コントローラ】環境変数またサーバー情報画面処理
  *
  * 	@version	1.0
  */
-class ctlMenu {
+class ctlEnvServer {
 
 	/**
 	 * コンストラクタ
@@ -20,13 +20,13 @@ class ctlMenu {
 	 */
 	function process() {
 		//オブジェト作成
-		$objClsMenu	 = new clsMenu();
-		$aryPostData = $objClsMenu->pullConvertData();
+		$objClsEnvServer = new clsEnvServer();
+		$aryPostData	 = $objClsEnvServer->pullConvertData();
 
-		require_once( './dspMenu.php' );
+		require_once( './dspEnvServer.php' );
 		
 		//オブジェクト解放
-		unset($objClsMenu);
+		unset($objClsEnvServer);
 		
 	}
 
