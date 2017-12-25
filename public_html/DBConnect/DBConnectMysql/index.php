@@ -7,13 +7,13 @@
  * @version	1.0
  */
 require_once("../../../include.php");
-require_once(DIR_MDL . "/clsDBConnectTest.php");
-require_once(DIR_CTR . "/ctlDBConnectTest.php");
+require_once(DIR_MDL . "/clsDBConnect.php");
+require_once(DIR_CTR . "/ctlDBConnect.php");
 
 //Jaswdbコントローラ呼出し
-$objCtlDBConnectTest = new ctlDBConnectTest();
-$objCtlDBConnectTest->processDBConnectTest();
+$objCtlDBConnectMysql = new ctlDBConnectMysql();
+$objCtlDBConnectMysql->processDBConnectMysql();
 
 //オブジェクト開放
-unset( $objCtlDBConnectTest );
+unset( $objCtlDBConnectMysql );
 ?>

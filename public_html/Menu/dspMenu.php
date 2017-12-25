@@ -12,7 +12,8 @@
 		　<a href="../Transloadit/TransloaditS3/">Transloadit動画投稿(S3)</a><br />
 		　<a href="../Transloadit/TransloaditS3List/">Transloadit動画閲覧(S3)</a><br />
 		■データベース<br />
-		　<a href="../DBConnectTest/DBConnectTest/">JAWSDB接続サンプル</a><br />
+		　<a href="../DBConnect/DBConnectMysql">MySQL接続サンプル</a><br />
+		　<a href="../DBConnect/DBConnectPostgres">Postgres接続サンプル</a><br />
 		■その他<br />
 		　<a href="../Other/HerokuIP/">HerokuIP取得</a><br />
 		　<a href="../Other/PhpInfo/">PHP Info</a><br />

@@ -1,11 +1,12 @@
 <?php
 
 /**
- * 	【モデル】Jaswdbアドオンを使用したサンプル処理
+ * 【モデル】	Jaswdbアドオンを使用したサンプル処理
+ *				Heroku Postgresアドオンを使用したサンプル処理
  *
- * 	@version	1.0
+ * @version	1.0
  */
-class clsDBConnectTest {
+class clsDBConnect {
 
 	private $_aryPostData;
 
