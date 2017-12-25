@@ -50,8 +50,8 @@ class ctlDBConnect {
 	function processDBConnectMysql() {
 
 		//オブジェクト作成
-		$objClsDBConnectTest = new clsDBConnectTest();
-		$aryPostData		 = $objClsDBConnectTest->pullConvertData();
+		$objClsDBConnectMySql	 = new clsDBConnect();
+		$aryPostData			 = $objClsDBConnectMySql->pullConvertData();
 
 		try {
 			$conn = new PDO( "mysql:host=$this->_strMysqlHostName;dbname=$this->_strMysqlDatabase", $this->_strMysqlUserName, $this->_strMysqlPassword );
@@ -118,7 +118,7 @@ SQL;
 		var_dump( $result );
 
 		//オブジェクト解放
-		unset( $objClsDBConnectTest );
+		unset( $objClsDBConnectMySql );
 	}
 
 	/**
@@ -128,8 +128,8 @@ SQL;
 	function processDBConnectPostgres() {
 
 		//オブジェクト作成
-		$objClsDBConnectTest = new clsDBConnectTest();
-		$aryPostData		 = $objClsDBConnectTest->pullConvertData();
+		$objClsDBConnectPostgres = new clsDBConnectTest();
+		$aryPostData			 = $objClsDBConnectPostgres->pullConvertData();
 
 		try {
 			$conn = new PDO( "pgsql:host=$this->_strPostgresHostName;dbname=$this->_strPostgresDatabase;port=$this->_strPostgresPort", $this->_strPostgresUserName, $this->_strPostgresPassword );
@@ -196,7 +196,7 @@ SQL;
 		var_dump( $result );
 
 		//オブジェクト解放
-		unset( $objClsDBConnectTest );
+		unset( $objClsDBConnectPostgres );
 	}
 
 }
