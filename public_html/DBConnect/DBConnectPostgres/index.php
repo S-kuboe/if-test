@@ -11,7 +11,7 @@ require_once(DIR_MDL . "/clsDBConnect.php");
 require_once(DIR_CTR . "/ctlDBConnect.php");
 
 //Heroku Postgresコントローラ呼出し
-$objCtlDBConnectPostgres = new ctlDBConnectPostgres();
+$objCtlDBConnectPostgres = new ctlDBConnect();
 $objCtlDBConnectPostgres->processDBConnectPostgres();
 
 //オブジェクト開放

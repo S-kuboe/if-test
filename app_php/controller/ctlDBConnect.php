@@ -128,7 +128,7 @@ SQL;
 	function processDBConnectPostgres() {
 
 		//オブジェクト作成
-		$objClsDBConnectPostgres = new clsDBConnectTest();
+		$objClsDBConnectPostgres = new clsDBConnect();
 		$aryPostData			 = $objClsDBConnectPostgres->pullConvertData();
 
 		try {

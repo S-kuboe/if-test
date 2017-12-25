@@ -11,7 +11,7 @@ require_once(DIR_MDL . "/clsDBConnect.php");
 require_once(DIR_CTR . "/ctlDBConnect.php");
 
 //Jaswdbコントローラ呼出し
-$objCtlDBConnectMysql = new ctlDBConnectMysql();
+$objCtlDBConnectMysql = new ctlDBConnect();
 $objCtlDBConnectMysql->processDBConnectMysql();
 
 //オブジェクト開放
