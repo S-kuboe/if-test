@@ -34,7 +34,8 @@ class ctlDBConnect {
 		$this->_strMysqlDatabase = ltrim( $aryMySQL["path"], '/' );
 
 		//Postgres接続情報の設定
-		$aryPostgres = parse_url( getenv( "DATABASE_URL" ) );
+//		$aryPostgres = parse_url( getenv( "DATABASE_URL" ) );
+		$aryPostgres = parse_url( "postgres://eyqhpwpfthhsnx:2c99b2778d8232c8231d3aafc64837d32fbacf6a6d43bf65c504e87b76a66344@ec2-23-23-245-89.compute-1.amazonaws.com:5432/d80dkict66qdkv" );
 
 		$this->_strPostgresHostName	 = $aryPostgres["host"];
 		$this->_strPostgresUserName	 = $aryPostgres["user"];
@@ -99,7 +100,7 @@ SQL;
 		echo "データインサート<br />";
 //ダミーデータ
 		for ( $i = 1; $i <= 3; $i++ ) {
-			$strDate	 = date( "%Y-%m-%d H:i:s" );
+			$strDate	 = date( "Y-m-d H:i:s" );
 			$strWhereSql = <<< SQL
 	INSERT INTO test_tbl VALUES (null, 'user{$i}', '{$strDate}')
 SQL;
@@ -134,17 +135,21 @@ SQL;
 		try {
 			$conn = new PDO( "pgsql:host=$this->_strPostgresHostName;dbname=$this->_strPostgresDatabase;port=$this->_strPostgresPort", $this->_strPostgresUserName, $this->_strPostgresPassword );
 			// set the PDO error mode to exception
-			$conn->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
-			$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+			$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			echo "Connected successfully<br />";
 		} catch ( PDOException $e ) {
 			echo "Connection failed: " . $e->getMessage() . "<br />";
 		}
-
+		
 		$strWhereSql = <<< SQL
-	SHOW TABLES 
+	SELECT
+		relname
+		, *
 	FROM
-		{$this->_strPostgresDatabase} LIKE 'test_tbl';		
+		pg_class 
+	WHERE
+		relkind = 'r'
+		AND relname = 'test_tbl'
 SQL;
 
 		$prepare = $conn->prepare( $strWhereSql );
@@ -155,11 +160,11 @@ SQL;
 			echo "該当テーブル無：新規作成<br />";
 			//テーブル作成
 			$strWhereSql = <<< SQL
-	CREATE TABLE test_tbl ( 
-		id INT PRIMARY KEY auto_increment
+	CREATE TABLE test_tbl( 
+		id SERIAL PRIMARY KEY
 		, name VARCHAR (64)
-		, upd_time DATETIME
-	);	
+		, upd_time TIMESTAMP
+	); 
 SQL;
 
 			$prepare = $conn->prepare( $strWhereSql );
@@ -177,9 +182,9 @@ SQL;
 		echo "データインサート<br />";
 //ダミーデータ
 		for ( $i = 1; $i <= 3; $i++ ) {
-			$strDate	 = date( "%Y-%m-%d H:i:s" );
+			$strDate	 = date( "Y-m-d H:i:s" );
 			$strWhereSql = <<< SQL
-	INSERT INTO test_tbl VALUES (null, 'user{$i}', '{$strDate}')
+	INSERT INTO test_tbl (name, upd_time) VALUES ('user{$i}', '{$strDate}')
 SQL;
 
 			$prepare = $conn->prepare( $strWhereSql );
