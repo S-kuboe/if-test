@@ -1,10 +1,26 @@
 <?php
-if ( getenv("ENV_MODE_VARS") !== false ) {
+
+//envファイルから一時的に環境変数を設定
+if ( getenv( "ENV_MODE_VARS" ) === false ) {
+	$aryEnv = file( __DIR__ . "/.env" );
+
+	foreach ( $aryEnv AS $strEnv ) {
+		//シングル削除
+		$strRep1 = str_replace( "'", "", $strEnv );
+		//改行削除
+		$strRep2 = preg_replace( '/\n|\r|\r\n/', '', $strRep1 );
+		if ( $strRep2 !== "" ) {
+			putenv( $strRep2 );
+		}
+	}
+}
+
+if ( getenv( "ENV_MODE_VARS" ) !== false ) {
 	$strPgRoot = "/app/app_php/common";
 } else {
-	$strPgRoot = filter_input(INPUT_SERVER, "DOCUMENT_ROOT");
-	$aryPgRoot = explode("/", $strPgRoot);
-	$strPgRoot = str_replace($aryPgRoot[count($aryPgRoot) - 1], "", $strPgRoot)  . "app_php/common";
+	$strPgRoot	 = filter_input( INPUT_SERVER, "DOCUMENT_ROOT" );
+	$aryPgRoot	 = explode( "/", $strPgRoot );
+	$strPgRoot	 = str_replace( $aryPgRoot[count( $aryPgRoot ) - 1], "", $strPgRoot ) . "app_php/common";
 }
 
 //共通定義
