@@ -34,8 +34,7 @@ class ctlDBConnect {
 		$this->_strMysqlDatabase = ltrim( $aryMySQL["path"], '/' );
 
 		//Postgres接続情報の設定
-//		$aryPostgres = parse_url( getenv( "DATABASE_URL" ) );
-		$aryPostgres = parse_url( "postgres://eyqhpwpfthhsnx:2c99b2778d8232c8231d3aafc64837d32fbacf6a6d43bf65c504e87b76a66344@ec2-23-23-245-89.compute-1.amazonaws.com:5432/d80dkict66qdkv" );
+		$aryPostgres = parse_url( getenv( "DATABASE_URL" ) );
 
 		$this->_strPostgresHostName	 = $aryPostgres["host"];
 		$this->_strPostgresUserName	 = $aryPostgres["user"];
