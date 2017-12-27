@@ -1,1 +1,8 @@
-
+{
+	"environments": {
+		"test": {
+			"scripts": {
+			}
+		}
+	}
+}
