@@ -1,7 +1,7 @@
 <?php
 
 //envファイルから一時的に環境変数を設定
-if ( getenv( "ENV_MODE_VARS" ) === false ) {
+if ( file_exists( __DIR__ . "/.env") === true ) {
 	$aryEnv = file( __DIR__ . "/.env" );
 
 	foreach ( $aryEnv AS $strEnv ) {
@@ -9,7 +9,7 @@ if ( getenv( "ENV_MODE_VARS" ) === false ) {
 		$strRep1 = str_replace( "'", "", $strEnv );
 		//改行削除
 		$strRep2 = preg_replace( '/\n|\r|\r\n/', '', $strRep1 );
-		if ( $strRep2 !== "" ) {
+		if ( $strRep2 !== "" && strpos($strRep2, "ENV_MODE_VARS") === false) {
 			putenv( $strRep2 );
 		}
 	}
