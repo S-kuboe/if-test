@@ -10,7 +10,9 @@ if ( file_exists( __DIR__ . "/.env") === true ) {
 		//改行削除
 		$strRep2 = preg_replace( '/\n|\r|\r\n/', '', $strRep1 );
 		if ( $strRep2 !== "" && strpos($strRep2, "ENV_MODE_VARS") === false) {
-			putenv( $strRep2 );
+			if ( getenv( $strRep2 ) === false ) {
+				putenv( $strRep2 );
+			}
 		}
 	}
 }
