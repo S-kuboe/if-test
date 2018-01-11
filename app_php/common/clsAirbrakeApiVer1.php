@@ -23,20 +23,21 @@ class clsAirbrakeApiVer1 {
 	 */
 	function __construct() {
 		$this->_strProjectId	 = getenv( 'AIRBRAKE_PROJECT_ID' );
-		$this->_strProjectKey	 = getenv( 'AIRBRAKE_API_KEY' );	
-		
-		$this->_objNotifier = new Airbrake\Notifier( array(
-			'projectId'	 => $this->_strProjectId,
-			'projectKey' => $this->_strProjectKey,
-				) );
+		$this->_strProjectKey	 = getenv( 'AIRBRAKE_API_KEY' );
 
-		// Set global notifier instance.
-		Airbrake\Instance::set( $this->_objNotifier );
+		if ( $this->_strProjectId !== false && $this->_strProjectKey !== false ) {
+			$this->_objNotifier = new Airbrake\Notifier( array(
+				'projectId'	 => $this->_strProjectId,
+				'projectKey' => $this->_strProjectKey,
+					) );
 
-		// Register error and exception handlers.
-		$this->_objHandler = new Airbrake\ErrorHandler( $this->_objNotifier );
-		$this->_objHandler->register();
+			// Set global notifier instance.
+			Airbrake\Instance::set( $this->_objNotifier );
 
+			// Register error and exception handlers.
+			$this->_objHandler = new Airbrake\ErrorHandler( $this->_objNotifier );
+			$this->_objHandler->register();
+		}
 	}
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -48,9 +49,9 @@ class clsAirbrakeApiVer1 {
 	 * ソースからThorwを投げる場合の例
 	 * 
 	 * try{
-	 *	throw new Exception( 'hello from phpbrake' )
+	 * 	throw new Exception( 'hello from phpbrake' )
 	 * } catch ( Exception $ex ) {
-	 *	clsAirbrakeApiVer1::setExceptionNotify( $ex );
+	 * 	clsAirbrakeApiVer1::setExceptionNotify( $ex );
 	 * }
 	 * 
 	 * @param Exception $ex
@@ -65,9 +66,9 @@ class clsAirbrakeApiVer1 {
 	 * ソースからThorwを投げる場合の例
 	 * 
 	 * try{
-	 *	throw new Exception( 'hello from phpbrake' )
+	 * 	throw new Exception( 'hello from phpbrake' )
 	 * } catch ( PDOException $ex ) {
-	 *	clsAirbrakeApiVer1::setPDOExceptionNotify( $ex );
+	 * 	clsAirbrakeApiVer1::setPDOExceptionNotify( $ex );
 	 * }
 	 * 
 	 * @param PDOException $ex
