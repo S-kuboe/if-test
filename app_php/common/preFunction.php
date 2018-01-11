@@ -17,6 +17,9 @@ header( 'Pragma:' );
 //タイムゾーン設定
 date_default_timezone_set( 'Asia/Tokyo' );
 
+//Herokuエラー収集アドオン
+$objAirbrake = new clsAirbrakeApiVer1();
+
 //許可ディレクトリ
 $strDirName			 = dirname( filter_input( INPUT_SERVER, "SCRIPT_NAME" ) ) . '/';
 $blnIgnoreLoinCheck	 = false;

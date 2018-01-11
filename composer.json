@@ -6,7 +6,8 @@
 		"transloadit/php-sdk": "dev-master",
 		"sendgrid/sendgrid": "*",
 		"phpunit/phpunit": "6.5.*",
-		"herrera-io/silex-pdo": "*"
+		"herrera-io/silex-pdo": "*",
+		"airbrake/phpbrake": "*"
 	},
 	"include-path": [
 		"vendor/ziggeo/ziggeophpsdk"

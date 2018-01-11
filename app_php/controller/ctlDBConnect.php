@@ -59,8 +59,9 @@ class ctlDBConnect {
 			$conn->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
 			$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 			echo "Connected successfully<br />";
-		} catch ( PDOException $e ) {
-			echo "Connection failed: " . $e->getMessage() . "<br />";
+		} catch ( PDOException $ex ) {
+			clsAirbrakeApiVer1::setPDOExceptionNotify( $ex );
+			echo "Connection failed: " . $ex->getMessage() . "<br />";
 		}
 
 		$strWhereSql = <<< SQL
@@ -136,8 +137,9 @@ SQL;
 			// set the PDO error mode to exception
 			$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			echo "Connected successfully<br />";
-		} catch ( PDOException $e ) {
-			echo "Connection failed: " . $e->getMessage() . "<br />";
+		} catch ( PDOException $ex ) {
+			clsAirbrakeApiVer1::setPDOExceptionNotify( $ex );
+			echo "Connection failed: " . $ex->getMessage() . "<br />";
 		}
 		
 		$strWhereSql = <<< SQL

@@ -223,6 +223,7 @@ class clsCommonFunction {
 		try {
 			error_log( $strMsg );
 		} catch ( Exception $ex ) {
+			clsAirbrakeApiVer1::setNotify( $ex );
 			return false;
 		}
 

@@ -28,6 +28,9 @@ if ( getenv( "ENV_MODE_VARS" ) !== false ) {
 //共通定義
 require_once $strPgRoot . "/clsDefinition.php";
 
+//Herokuエラー収集アドオン
+require_once DIR_CMN . "/clsAirbrakeApiVer1.php";
+
 //HTML表示フォーマット用の特殊クラス
 require_once DIR_CMN . "/f.php";
 
