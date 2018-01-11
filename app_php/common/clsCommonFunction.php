@@ -171,6 +171,11 @@ class clsCommonFunction {
 	public static function blnWhiteList() {
 		$strUserIP = self::getUserIP();
 
+		//ローカル環境であればTRUE
+		if ( getenv( "ENV_MODE_VARS" ) === false ) {
+			return true;
+		}
+		
 		//環境変数が登録されていなければTRUE
 		if ( getenv( 'ENV_WHITE_IP' ) === false ) {
 			return true;
