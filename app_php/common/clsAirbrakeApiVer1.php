@@ -53,11 +53,10 @@ class clsAirbrakeApiVer1 {
 	 *	clsAirbrakeApiVer1::setExceptionNotify( $ex );
 	 * }
 	 * 
-	 * @param エラー監視 $e
-	 * @return array
+	 * @param Exception $ex
 	 */
-	function setExceptionNotify( Exception $e ) {
-		Airbrake\Instance::notify( $e );
+	function setExceptionNotify( Exception $ex ) {
+		Airbrake\Instance::notify( $ex );
 	}
 
 	/**
@@ -71,8 +70,7 @@ class clsAirbrakeApiVer1 {
 	 *	clsAirbrakeApiVer1::setPDOExceptionNotify( $ex );
 	 * }
 	 * 
-	 * @param エラー監視 $e
-	 * @return array
+	 * @param PDOException $ex
 	 */
 	function setPDOExceptionNotify( PDOException $ex ) {
 		Airbrake\Instance::notify( $ex );
