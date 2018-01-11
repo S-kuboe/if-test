@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-require_once("../include.php");
+require_once("./include.php");
 
 require(DIR_APP . '/vendor/autoload.php');
 

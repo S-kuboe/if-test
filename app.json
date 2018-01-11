@@ -2,13 +2,9 @@
 	"environments": {
 		"test": {
 			"scripts": {
-				"test": "phpunit",
 				"quantity": 1,
 				"size": "free"
-			},
-			"addons": [
-				"sendgrid"
-			]
+			}
 		}
 	}
 }
