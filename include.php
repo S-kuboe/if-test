@@ -17,16 +17,19 @@ if ( file_exists( __DIR__ . "/.env") === true ) {
 	}
 }
 
-if ( getenv( "ENV_MODE_VARS" ) !== false ) {
-	$strPgRoot = "/app/app_php/common";
-} else {
-	$strPgRoot	 = filter_input( INPUT_SERVER, "DOCUMENT_ROOT" );
-	$aryPgRoot	 = explode( "/", $strPgRoot );
-	$strPgRoot	 = str_replace( $aryPgRoot[count( $aryPgRoot ) - 1], "", $strPgRoot ) . "app_php/common";
-}
+//ルートディレクトリの取得
+define( "DIR_APP", str_replace( "\\", "/", __DIR__ ) );
+//ドキュメントルートディレクトリ設定
+define( 'DIR_DMT', filter_input( INPUT_SERVER, "DOCUMENT_ROOT" ) );
+//共通ディレクトリ設定
+define( 'DIR_CMN', DIR_APP . "/app_php/common" );
+//モデルディレクトリ設定
+define( 'DIR_MDL', DIR_APP . "/app_php/model" );
+//コントローラディレクトリ設定
+define( 'DIR_CTR', DIR_APP . "/app_php/controller" );
 
 //共通定義
-require_once $strPgRoot . "/clsDefinition.php";
+require_once DIR_CMN . "/clsDefinition.php";
 
 //Herokuエラー収集アドオン
 require_once DIR_CMN . "/clsAirbrakeApiVer1.php";

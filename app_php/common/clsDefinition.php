@@ -6,20 +6,11 @@
  *
  * @version	1.0
  */
+//動作環境設定
 define( 'SERVER_MODE', getenv( "ENV_MODE_VARS" ) );
+
+//SSLの設定
 if ( SERVER_MODE !== false ) {
-	define( 'RUN_MODE', TRUE );
-	define( "DIR_APP", "/app/" );
-} else {
-	define( 'RUN_MODE', FALSE );
-	$strPgRoot	 = filter_input( INPUT_SERVER, "DOCUMENT_ROOT" );
-	$aryPgRoot	 = explode( "/", $strPgRoot );
-	$strPgRoot	 = str_replace( $aryPgRoot[count( $aryPgRoot ) - 1], "", $strPgRoot );
-
-	define( "DIR_APP", $strPgRoot );
-}
-
-if ( RUN_MODE ) {
 	define( 'STR_HTTP', "https://" );
 } else {
 	if ( filter_input( INPUT_SERVER, "HTTPS" ) !== null && filter_input( INPUT_SERVER, "HTTPS" ) == 'on' ) {
@@ -28,11 +19,6 @@ if ( RUN_MODE ) {
 		define( 'STR_HTTP', "http://" );
 	}
 }
-
-define( 'DIR_DMT', filter_input( INPUT_SERVER, "DOCUMENT_ROOT" ) );
-define( 'DIR_CMN', DIR_APP . "app_php/common" );
-define( 'DIR_MDL', DIR_APP . "app_php/model" );
-define( 'DIR_CTR', DIR_APP . "app_php/controller" );
 
 class clsDefinition {
 
