@@ -7,12 +7,12 @@ require_once DIR_CMN . "/clsCryptApiVer1.php";
 require_once DIR_CMN . "/clsAirbrakeApiVer1.php";
 
 /**
- * 【コントローラ】共通画面処理
+ * 共通処理
  *
  * @author		kuboe 2018/01/16
  * @version	1.0
  */
-class ctlApp {
+class preApp {
 
 	//オブジェクト
 	public $_objCrypt;

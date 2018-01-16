@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class clsHerokuIP extends clsApp{
+class clsHerokuIP extends preApp{
 
 	private $_aryPostData;
 

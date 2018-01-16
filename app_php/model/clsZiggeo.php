@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class clsZiggeo extends clsApp{
+class clsZiggeo extends preApp{
 
 	private $_aryPostData;
 

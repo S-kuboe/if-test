@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class clsCmnError extends clsApp{
+class clsCmnError extends preApp{
 
 	private $_aryPostData;
 

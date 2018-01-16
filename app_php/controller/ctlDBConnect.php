@@ -8,7 +8,7 @@
  */
 require(DIR_APP . '/vendor/autoload.php');
 
-class ctlDBConnect extends ctlApp {
+class ctlDBConnect extends preApp {
 
 	//クラス変数
 	private $_strMysqlHostName;

@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class clsPhpInfo extends clsApp{
+class clsPhpInfo extends preApp{
 
 	private $_aryPostData;
 

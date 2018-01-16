@@ -6,7 +6,7 @@
  *
  * @version 1.0
  */
-class clsCommonFunction extends clsApp {
+class clsCommonFunction extends preApp {
 
 	/**
 	 * コンストラクタ

@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class clsEnvServer extends clsApp{
+class clsEnvServer extends preApp{
 
 	private $_aryPostData;
 

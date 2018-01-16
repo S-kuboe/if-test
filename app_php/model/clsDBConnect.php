@@ -6,7 +6,7 @@
  *
  * @version	1.0
  */
-class clsDBConnect extends clsApp{
+class clsDBConnect extends preApp{
 
 	private $_aryPostData;
 

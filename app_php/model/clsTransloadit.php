@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class clsTransloadit extends clsApp{
+class clsTransloadit extends preApp{
 
 	private $_aryPostData;
 

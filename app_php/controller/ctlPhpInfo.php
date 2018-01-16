@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class ctlPhpInfo extends ctlApp {
+class ctlPhpInfo extends preApp {
 
 	/**
 	 * コンストラクタ

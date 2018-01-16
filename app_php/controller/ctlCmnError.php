@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class ctlCmnError extends ctlApp {
+class ctlCmnError extends preApp {
 
 	/**
 	 * コンストラクタ

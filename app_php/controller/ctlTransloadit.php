@@ -9,7 +9,7 @@ require(DIR_APP . '/vendor/autoload.php');
 
 use transloadit\Transloadit;
 
-class ctlTransloadit extends ctlApp {
+class ctlTransloadit extends preApp {
 
 	//クラス変数
 	private $_strKey;

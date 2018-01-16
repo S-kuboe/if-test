@@ -9,7 +9,7 @@ require(DIR_APP . '/vendor/autoload.php');
 
 use ziggeo\ziggeophpsdk;
 
-class ctlZiggeo extends ctlApp {
+class ctlZiggeo extends preApp {
 
 	//クラス変数
 	private $_strAppToken;

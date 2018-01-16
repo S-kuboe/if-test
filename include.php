@@ -69,8 +69,7 @@ if ( SERVER_MODE !== false ) {
 }
 
 //共通制御
-require_once DIR_CTR . '/ctlApp.php';
-require_once DIR_MDL . '/clsApp.php';
+require_once DIR_CMN . '/preApp.php';
 
 //共通定義
 require_once DIR_CMN . "/clsDefinition.php";

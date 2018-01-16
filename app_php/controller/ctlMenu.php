@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class ctlMenu extends ctlApp {
+class ctlMenu extends preApp {
 
 	/**
 	 * コンストラクタ

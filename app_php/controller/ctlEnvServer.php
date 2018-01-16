@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class ctlEnvServer extends ctlApp {
+class ctlEnvServer extends preApp {
 
 	/**
 	 * コンストラクタ
