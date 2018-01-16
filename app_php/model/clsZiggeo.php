@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class clsZiggeo {
+class clsZiggeo extends clsApp{
 
 	private $_aryPostData;
 
@@ -13,6 +13,8 @@ class clsZiggeo {
 	 * コンストラクタ
 	 */
 	public function __construct() {
+		parent::__construct();
+
 		$this->_aryPostData = [];
 	}
 

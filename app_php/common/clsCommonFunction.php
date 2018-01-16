@@ -6,7 +6,14 @@
  *
  * @version 1.0
  */
-class clsCommonFunction {
+class clsCommonFunction extends clsApp {
+
+	/**
+	 * コンストラクタ
+	 */
+	function __construct() {
+		parent::__construct();
+	}
 
 	/**
 	 * セレクトボックスを選択状態にする為の関数

@@ -5,13 +5,13 @@
  *
  * 	@version	1.0
  */
-class ctlMenu {
+class ctlMenu extends ctlApp {
 
 	/**
 	 * コンストラクタ
 	 */
 	function __construct() {
-		
+		parent::__construct();
 	}
 
 	/**

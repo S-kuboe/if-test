@@ -9,7 +9,7 @@ require(DIR_APP . '/vendor/autoload.php');
 
 use ziggeo\ziggeophpsdk;
 
-class ctlZiggeo {
+class ctlZiggeo extends ctlApp {
 
 	//クラス変数
 	private $_strAppToken;
@@ -19,6 +19,8 @@ class ctlZiggeo {
 	 * コンストラクタ
 	 */
 	function __construct() {
+		parent::__construct();
+		
 		$url					 = parse_url( getenv( "ZIGGEO_URL" ) );
 		$this->_strAppToken		 = $url["user"];
 		$this->_strPrivateKey	 = $url["pass"];

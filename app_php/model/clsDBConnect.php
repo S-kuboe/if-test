@@ -6,7 +6,7 @@
  *
  * @version	1.0
  */
-class clsDBConnect {
+class clsDBConnect extends clsApp{
 
 	private $_aryPostData;
 
@@ -14,6 +14,8 @@ class clsDBConnect {
 	 * コンストラクタ
 	 */
 	public function __construct() {
+		parent::__construct();
+
 		$this->_aryPostData = [];
 	}
 

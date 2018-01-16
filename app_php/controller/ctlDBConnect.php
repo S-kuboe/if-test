@@ -8,7 +8,7 @@
  */
 require(DIR_APP . '/vendor/autoload.php');
 
-class ctlDBConnect {
+class ctlDBConnect extends ctlApp {
 
 	//クラス変数
 	private $_strMysqlHostName;
@@ -25,6 +25,8 @@ class ctlDBConnect {
 	 * コンストラクタ
 	 */
 	function __construct() {
+		parent::__construct();
+
 		//JAWSDB接続情報の設定
 		$aryMySQL = parse_url( getenv( "JAWSDB_URL" ) );
 
@@ -135,13 +137,13 @@ SQL;
 		try {
 			$conn = new PDO( "pgsql:host=$this->_strPostgresHostName;dbname=$this->_strPostgresDatabase;port=$this->_strPostgresPort", $this->_strPostgresUserName, $this->_strPostgresPassword );
 			// set the PDO error mode to exception
-			$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 			echo "Connected successfully<br />";
 		} catch ( PDOException $ex ) {
 			clsAirbrakeApiVer1::setPDOExceptionNotify( $ex );
 			echo "Connection failed: " . $ex->getMessage() . "<br />";
 		}
-		
+
 		$strWhereSql = <<< SQL
 	SELECT
 		relname

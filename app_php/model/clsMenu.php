@@ -5,7 +5,7 @@
  *
  * 	@version	1.0
  */
-class clsMenu {
+class clsMenu extends clsApp{
 
 	private $_aryPostData;
 
@@ -13,6 +13,8 @@ class clsMenu {
 	 * コンストラクタ
 	 */
 	public function __construct() {
+		parent::__construct();
+
 		$this->_aryPostData = [];
 	}
 

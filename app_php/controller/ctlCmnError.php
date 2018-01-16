@@ -5,14 +5,15 @@
  *
  * 	@version	1.0
  */
-class ctlCmnError {
+class ctlCmnError extends ctlApp {
 
 	/**
 	 * コンストラクタ
 	 */
 	function __construct() {
-		
+		parent::__construct();
 	}
+
 
 	/**
 	 * 画面処理分岐

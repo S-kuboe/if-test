@@ -9,7 +9,7 @@ require(DIR_APP . '/vendor/autoload.php');
 
 use transloadit\Transloadit;
 
-class ctlTransloadit {
+class ctlTransloadit extends ctlApp {
 
 	//クラス変数
 	private $_strKey;
@@ -27,6 +27,8 @@ class ctlTransloadit {
 	 * コンストラクタ
 	 */
 	function __construct() {
+		parent::__construct();
+		
 		$this->_strS3Bucket	 = getenv( 'S3_BUCKET' );
 		$this->_strS3Key	 = getenv( 'S3_ACCESS_KEY' );
 		$this->_strS3Secret	 = getenv( 'S3_SECRET_KEY' );
